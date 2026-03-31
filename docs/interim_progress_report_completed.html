@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Group Project Interim Progress Report</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      font-size: 12pt;
+      line-height: 1.35;
+      margin: 1in;
+    }
+    h1, h2, h3 {
+      margin-bottom: 0.25em;
+    }
+    p {
+      margin: 0 0 0.75em 0;
+    }
+    ul, ol {
+      margin-top: 0.2em;
+      margin-bottom: 0.75em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0.75em 0 1em 0;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6px;
+      vertical-align: top;
+      text-align: left;
+    }
+    .placeholder {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Group Project Interim Progress Report</h1>
+  <p><strong>Course:</strong> ISM 4402</p>
+  <p><strong>Project Topic:</strong> U.S. Entry-Level Job Market by Sector: Building a Career Navigator Framework</p>
+
+  <h2>Section 1 - Description of Data</h2>
+
+  <h3>Summary of the Data</h3>
+  <p>
+    This project uses a multi-table labor-market dataset assembled from official U.S. Bureau of Labor Statistics
+    and O*NET sources. The goal is to analyze the U.S. entry-level job market across sectors so the team can identify
+    where early-career workers are most likely to find strong opportunities, what occupations are growing fastest,
+    how wages vary across sectors, and how job characteristics differ by occupation and industry.
+  </p>
+  <p>
+    The final business framing connects the analysis to the concept of a LinkedIn Career Navigator AI that could help
+    users choose sectors, occupations, and learning paths based on labor-market evidence.
+  </p>
+
+  <h3>Data Sources Being Used</h3>
+  <ol>
+    <li>
+      <strong>BLS Employment Projections tables</strong>
+      <ul>
+        <li>Occupational projections and worker characteristics</li>
+        <li>Industry-occupation matrix data</li>
+        <li>Occupational openings and separations</li>
+        <li>Employment and output by industry</li>
+      </ul>
+    </li>
+    <li>
+      <strong>BLS Occupational Employment and Wage Statistics tables</strong>
+      <ul>
+        <li>National industry-specific and by ownership</li>
+        <li>All data tables</li>
+      </ul>
+    </li>
+    <li>
+      <strong>BLS State and Area Employment annual average tables</strong>
+      <ul>
+        <li>Employees on nonfarm payrolls in states and selected areas by major industry</li>
+      </ul>
+    </li>
+    <li>
+      <strong>BLS Labor Force Characteristics tables</strong>
+      <ul>
+        <li>Average hours at work by industry</li>
+        <li>Average hours at work by occupation</li>
+      </ul>
+    </li>
+    <li>
+      <strong>O*NET occupation attributes</strong>
+      <ul>
+        <li>Work Activities.xlsx</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Source Websites</h3>
+  <p>BLS Employment Projections tables: https://www.bls.gov/emp/tables.htm</p>
+  <p>BLS Occupational Employment and Wage Statistics tables: https://www.bls.gov/oes/tables.htm</p>
+  <p>BLS State and Area Employment annual average tables: https://www.bls.gov/sae/tables/annual-average/</p>
+  <p>BLS Labor Force Characteristics tables: https://www.bls.gov/cps/lfcharacteristics.htm</p>
+  <p>BLS JOLTS supplemental tables: https://www.bls.gov/web/jolts.supp.toc.htm</p>
+  <p>O*NET Work Activities data: https://www.onetcenter.org/dictionary/29.2/excel/work_activities.html</p>
+
+  <h3>Why This Data Fits the Project</h3>
+  <p>
+    This dataset is a strong fit for the group project because it is real, multi-table, and suitable for Tableau-based
+    business analysis. It supports data preparation, joins, calculated fields, clustering, forecasting, dashboards, and
+    storytelling. It also allows the project to compare sectors and occupations using multiple criteria instead of only
+    one measure such as wage.
+  </p>
+
+  <h3>Data Preparation Plan</h3>
+  <ol>
+    <li>Standardize occupation codes across BLS and O*NET so occupation-level joins work correctly.</li>
+    <li>Standardize sector and industry labels so wages, growth, employment, and openings can be compared consistently.</li>
+    <li>Filter for entry-level occupations using education, training, and related-work-experience fields.</li>
+    <li>Create calculated fields such as entry-level flag, growth category, wage percentile group, accessibility score, and attractiveness score.</li>
+    <li>Handle missing, suppressed, or non-comparable values through filtering, null handling, or documented exclusions.</li>
+    <li>Join occupation-level, industry-level, and geography-level tables using occupation code, industry code, and state fields where appropriate.</li>
+    <li>Reshape long-format data such as O*NET work activities when needed for Tableau visuals.</li>
+    <li>Build focused analysis-ready subsets for occupations, sectors, state-sector employment, occupation attributes, and occupation-sector mapping.</li>
+  </ol>
+
+  <h3>Granularity / Unit of Analysis Summary</h3>
+  <p>
+    The table below summarizes the expected unit of analysis for each major data table. For the O*NET file, the row and
+    column counts were confirmed from the local workbook. Several BLS files saved in the local project folder currently
+    contain blocked HTML download responses rather than the actual spreadsheets, so those counts must be updated after
+    the official source files are downloaded manually in a browser.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Table Name</th>
+        <th>Lowest Level of Granularity</th>
+        <th># of Columns</th>
+        <th># of Rows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BLS Occupation Projections</td>
+        <td>One row per occupation</td>
+        <td>TBD after manual download of official workbook</td>
+        <td>TBD after manual download of official workbook</td>
+      </tr>
+      <tr>
+        <td>BLS Industry Employment and Output</td>
+        <td>One row per industry</td>
+        <td>TBD after manual download of official workbook</td>
+        <td>TBD after manual download of official workbook</td>
+      </tr>
+      <tr>
+        <td>BLS Industry-Occupation Matrix</td>
+        <td>One row per occupation-industry combination, depending on selected table version</td>
+        <td>TBD after manual download of official workbook</td>
+        <td>TBD after manual download of official workbook</td>
+      </tr>
+      <tr>
+        <td>BLS OEWS Wages by Occupation and Industry</td>
+        <td>One row per occupation-industry combination</td>
+        <td>TBD after manual download of official workbook</td>
+        <td>TBD after manual download of official workbook</td>
+      </tr>
+      <tr>
+        <td>BLS State Employment by Major Industry</td>
+        <td>One row per state-sector combination</td>
+        <td>TBD after manual download of official workbook</td>
+        <td>TBD after manual download of official workbook</td>
+      </tr>
+      <tr>
+        <td>O*NET Work Activities</td>
+        <td>One row per occupation-activity record</td>
+        <td>15</td>
+        <td>72,079</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="placeholder">
+    Screenshot placeholder: Insert Tableau Desktop or Tableau Prep screenshots here showing how the team determined the
+    granularity for each connected table.
+  </p>
+
+  <h2>Section 2 - Purpose of the Analysis</h2>
+
+  <h3>Overall Purpose</h3>
+  <p>
+    The purpose of the analysis is to identify where the strongest entry-level opportunities exist in the U.S. job market
+    and how those opportunities vary by sector, occupation, wages, projected growth, education requirements, and work
+    characteristics. The group will use the analysis to support the concept of a LinkedIn Career Navigator AI that helps
+    early-career users choose sectors and occupations using real market data.
+  </p>
+
+  <h3>Angle of the Analysis</h3>
+  <p>
+    The most interesting angle is not simply which jobs pay the most. Instead, the team will evaluate opportunity using a
+    combination of accessibility for entry-level workers, projected growth and openings, sector demand, wage potential,
+    work-activity patterns, and geography. This gives the project a stronger business story and makes the Tableau output
+    more useful for practical career decision-making.
+  </p>
+
+  <h3>Specific Questions That Will Guide the Analysis</h3>
+  <ol>
+    <li>Which U.S. sectors currently offer the strongest volume of employment for entry-level workers?</li>
+    <li>Which entry-level occupations have the highest projected growth and annual openings?</li>
+    <li>How do wages for similar entry-level occupations differ across sectors?</li>
+    <li>Which sectors combine stronger wage potential with stronger projected employment growth?</li>
+    <li>How do education and training requirements vary across entry-level occupations and sectors?</li>
+    <li>Which states show the strongest concentration of employment in sectors that appear attractive for early-career workers?</li>
+    <li>Can occupations be clustered into meaningful groups based on work activities and job characteristics?</li>
+    <li>Which occupations appear most attractive when balancing accessibility, wages, and growth?</li>
+  </ol>
+
+  <h3>Planned Tableau Story Direction</h3>
+  <p>
+    To keep the project manageable while still showing analytical depth, the Tableau story will focus on major U.S. sectors,
+    entry-level occupations, selected high-interest sectors such as healthcare, professional services, retail, logistics,
+    finance, and technology-related services, and occupation clusters built from work-activity patterns.
+  </p>
+  <p>
+    A strong final narrative for the project is: "Where should an early-career worker start? A data-driven look at
+    entry-level opportunities across U.S. sectors."
+  </p>
+
+  <h3>Current Progress Note</h3>
+  <p>
+    As of March 31, 2026, the project folder includes the O*NET workbook and project planning materials. Some BLS files in
+    the current local folder were saved as blocked HTML responses instead of the true downloadable spreadsheets. Those
+    official BLS workbooks still need to be downloaded manually in a browser and then connected in Tableau before the team
+    completes the granularity screenshots and later exploratory analysis sections.
+  </p>
+</body>
+</html>

@@ -1,0 +1,103 @@
+Tableau Build Plan
+U.S. Entry-Level Job Market by Sector
+
+Recommended Tableau worksheets
+
+1. Sector employment overview
+Visual: bar chart
+Purpose: compare employment volume across major sectors
+
+2. Sector growth outlook
+Visual: bar chart or highlight table
+Purpose: compare projected growth across sectors
+
+3. Entry-level occupation wage distribution
+Visual: histogram
+Measure: annual median wage or hourly wage
+
+4. Occupation wage outliers by sector
+Visual: box-and-whisker plot
+Purpose: show spread and outliers of wages within sectors
+
+5. Growth versus wage opportunity map
+Visual: scatter plot with trendline
+X-axis: projected growth percent
+Y-axis: annual median wage
+Detail: occupation
+Color: sector
+
+6. Accessibility versus payoff quadrant
+Visual: quadrant analysis
+X-axis: accessibility score
+Y-axis: attractiveness score
+Purpose: identify occupations with low entry barriers and strong upside
+
+7. Occupation clusters from work activities
+Visual: cluster analysis
+Data: selected O*NET work activities
+Purpose: group occupations by similarity in job characteristics
+
+8. State-sector employment map or bar view
+Visual: filled map or ranked bar chart
+Purpose: show where major sectors are strongest geographically
+
+9. Sector employment forecast
+Visual: forecast line chart
+Purpose: use time-based sector employment series if downloaded from BLS state/area or CES tables
+
+10. Story dashboard
+Visual: dashboard with filters and captions
+Purpose: summarize where entry-level workers should look first
+
+Required course-topic coverage
+
+At least two histograms
+- wage distribution for occupations
+- hours-worked distribution or openings distribution
+
+At least two box-and-whisker plots
+- wages by sector
+- openings or projected growth by occupation group
+
+At least two cluster analyses
+- occupation clusters using work activities
+- sector clusters using wage, growth, and employment measures
+
+At least two forecasts
+- sector employment trend by time
+- state-sector employment trend by time
+
+At least two scatter plots with trendlines
+- wage versus growth
+- openings versus wage
+
+At least two quadrant analyses
+- accessibility versus attractiveness
+- employment volume versus growth
+
+Suggested calculated fields
+- [Entry Level Flag]
+- [Accessibility Score]
+- [Attractiveness Score]
+- [Growth Category]
+- [High Opportunity Flag]
+- [Median Wage Bucket]
+- [Openings Per 1,000 Workers]
+
+Suggested dashboard filters
+- sector
+- state
+- occupation major group
+- education requirement
+- wage threshold
+- growth category
+
+Suggested captions or insights
+- Some sectors have high total employment but lower wage growth.
+- A small set of occupations combine low entry barriers with strong projected openings.
+- Similar occupations can produce very different wage outcomes depending on sector.
+- Work-activity clustering can reveal which jobs are analytical, service-oriented, operational, or coordination-heavy.
+
+Best-fit final story
+The dashboard should help answer one practical question:
+Where should an early-career worker focus first if they want strong opportunity in the U.S. job market?

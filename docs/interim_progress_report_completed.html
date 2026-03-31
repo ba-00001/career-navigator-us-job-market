@@ -39,6 +39,7 @@
 <body>
   <h1>Group Project Interim Progress Report</h1>
   <p><strong>Course:</strong> ISM 4402</p>
+  <p><strong>Team Members:</strong> Brian Bazurto, Bobo Zekpa, Kayli Mayen</p>
   <p><strong>Project Topic:</strong> U.S. Entry-Level Job Market by Sector: Building a Career Navigator Framework</p>
 
   <h2>Section 1 - Description of Data</h2>
@@ -130,6 +131,51 @@
     the official source files are downloaded manually in a browser.
   </p>
 
+  <h3>Granularity for Each Source</h3>
+  <p>
+    The team needs to show the level of detail for each source because the Tableau analysis depends on understanding what
+    one row represents in each table before joining sources or creating calculations.
+  </p>
+  <ol>
+    <li>
+      <strong>BLS Occupation Projections:</strong> the expected unit of analysis is one row per occupation. Each record is
+      intended to represent a single occupation with fields such as projected growth, annual openings, and worker
+      characteristics.
+    </li>
+    <li>
+      <strong>BLS Industry Employment and Output:</strong> the expected unit of analysis is one row per industry. Each row
+      represents an industry or sector-level observation used to compare industry size, output, or projected growth.
+    </li>
+    <li>
+      <strong>BLS Industry-Occupation Matrix:</strong> the expected unit of analysis is one row per occupation-industry
+      combination, depending on which matrix table is selected. This source is more detailed because it shows how a given
+      occupation appears inside an industry or how an industry is composed of occupations.
+    </li>
+    <li>
+      <strong>BLS OEWS Wage Tables:</strong> the expected unit of analysis is one row per occupation-industry combination.
+      Each row provides wage measures for a specific occupation within a specific industry context.
+    </li>
+    <li>
+      <strong>BLS State and Area Employment:</strong> the expected unit of analysis is one row per state-sector
+      combination. Each record represents employment for a major industry within a state or area.
+    </li>
+    <li>
+      <strong>BLS Labor Force Characteristics:</strong> depending on the selected table, the expected unit of analysis is
+      one row per industry or one row per occupation. These tables support comparisons of average hours worked and related
+      labor-force measures.
+    </li>
+    <li>
+      <strong>O*NET Work Activities:</strong> the unit of analysis is one row per occupation-activity record. In the local
+      workbook, each row captures one occupation tied to one work-activity measure, which makes this source appropriate for
+      clustering and occupation-profile analysis.
+    </li>
+  </ol>
+  <p>
+    This granularity review also shows why the sources cannot all be joined at the same level without preparation. Some
+    tables are occupation-level, some are industry-level, some are state-industry-level, and some are occupation-activity-level.
+    The team will need to aggregate, filter, or build bridge tables before combining them in Tableau.
+  </p>
+
   <table>
     <thead>
       <tr>
@@ -181,7 +227,8 @@
 
   <p class="placeholder">
     Screenshot placeholder: Insert Tableau Desktop or Tableau Prep screenshots here showing how the team determined the
-    granularity for each connected table.
+    granularity for each connected table. These screenshots should specifically show the fields or row structure used to
+    confirm what one observation represents for each source.
   </p>
 
   <h2>Section 2 - Purpose of the Analysis</h2>

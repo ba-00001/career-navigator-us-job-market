@@ -58,6 +58,7 @@ def table(rows):
 title = [
     paragraph("Group Project Interim Progress Report", "Title"),
     paragraph("Course: ISM 4402"),
+    paragraph("Team Members: Brian Bazurto, Bobo Zekpa, Kayli Mayen"),
     paragraph("Project Topic: U.S. Entry-Level Job Market by Sector: Building a Career Navigator Framework"),
 ]
 
@@ -108,6 +109,44 @@ section_1 = [
         "confirmed from the local workbook. Several BLS files saved in the local project folder currently contain blocked HTML download responses "
         "rather than the actual spreadsheets, so those counts must be updated after the official source files are downloaded manually in a browser."
     ),
+    paragraph("Granularity for Each Source", "Heading2"),
+    paragraph(
+        "The team needs to show the level of detail for each source because the Tableau analysis depends on understanding what one row represents "
+        "in each table before joining sources or creating calculations."
+    ),
+    paragraph(
+        "1. BLS Occupation Projections: the expected unit of analysis is one row per occupation. Each record is intended to represent a single occupation "
+        "with fields such as projected growth, annual openings, and worker characteristics."
+    ),
+    paragraph(
+        "2. BLS Industry Employment and Output: the expected unit of analysis is one row per industry. Each row represents an industry or sector-level "
+        "observation used to compare industry size, output, or projected growth."
+    ),
+    paragraph(
+        "3. BLS Industry-Occupation Matrix: the expected unit of analysis is one row per occupation-industry combination, depending on which matrix table "
+        "is selected. This source is more detailed because it shows how a given occupation appears inside an industry or how an industry is composed of occupations."
+    ),
+    paragraph(
+        "4. BLS OEWS Wage Tables: the expected unit of analysis is one row per occupation-industry combination. Each row provides wage measures for a specific "
+        "occupation within a specific industry context."
+    ),
+    paragraph(
+        "5. BLS State and Area Employment: the expected unit of analysis is one row per state-sector combination. Each record represents employment for a major "
+        "industry within a state or area."
+    ),
+    paragraph(
+        "6. BLS Labor Force Characteristics: depending on the selected table, the expected unit of analysis is one row per industry or one row per occupation. "
+        "These tables support comparisons of average hours worked and related labor-force measures."
+    ),
+    paragraph(
+        "7. O*NET Work Activities: the unit of analysis is one row per occupation-activity record. In the local workbook, each row captures one occupation tied "
+        "to one work-activity measure, which makes this source appropriate for clustering and occupation-profile analysis."
+    ),
+    paragraph(
+        "This granularity review also shows why the sources cannot all be joined at the same level without preparation. Some tables are occupation-level, some "
+        "are industry-level, some are state-industry-level, and some are occupation-activity-level. The team will need to aggregate, filter, or build bridge "
+        "tables before combining them in Tableau."
+    ),
 ]
 
 granularity_rows = [
@@ -121,7 +160,7 @@ granularity_rows = [
 ]
 
 section_2 = [
-    paragraph("Screenshot placeholder: Insert Tableau Desktop or Tableau Prep screenshots here showing how the team determined the granularity for each connected table."),
+    paragraph("Screenshot placeholder: Insert Tableau Desktop or Tableau Prep screenshots here showing how the team determined the granularity for each connected table. These screenshots should specifically show the fields or row structure used to confirm what one observation represents for each source."),
     paragraph("Section 2 - Purpose of the Analysis", "Heading1"),
     paragraph("Overall Purpose", "Heading2"),
     paragraph(

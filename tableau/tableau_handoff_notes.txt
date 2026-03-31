@@ -1,0 +1,31 @@
+Tableau Deliverables Created
+
+Files added in this folder:
+- entry_level_job_market_starter.twb
+- entry_level_job_market_sources.tds
+
+Recommended worksheets to build next in Tableau Desktop:
+- Source Granularity Notes
+- Sector Employment Overview
+- Growth Versus Wage Map
+- Occupation Clusters
+- State Sector Comparison
+
+Granularity to show for each source:
+- BLS Occupation Projections: one row per occupation
+- BLS Industry Employment and Output: one row per industry
+- BLS Industry-Occupation Matrix: one row per occupation-industry combination
+- BLS OEWS Wage Tables: one row per occupation-industry combination
+- BLS State Employment tables: one row per state-sector combination
+- BLS Labor Force Characteristics: one row per industry or one row per occupation, depending on table
+- O*NET Work Activities: one row per occupation-activity record
+
+Important project note:
+- The local O*NET workbook is present and usable.
+- Several local BLS files are currently blocked HTML responses, not the real spreadsheets.
+- After downloading the real BLS files manually, reconnect them in Tableau Desktop and replace the temporary starter connection.
+
+GitHub note:
+- This project folder still has no git remote configured.
+- Because there is no remote, nothing from this folder can appear on GitHub yet.
+- Once a GitHub repo URL is provided, add it as origin and push main.

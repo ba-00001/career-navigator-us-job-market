@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<datasource caption='Entry Level Job Market Sources' inline='true' name='entry_level_job_market_sources' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <connection class='excel-direct' cleaning='no' compat='no' filename='../data/raw/onet_work_activities.xlsx' validate='no' />
+  <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+</datasource>

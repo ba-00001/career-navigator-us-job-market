@@ -1,0 +1,93 @@
+Manual Download Steps for Official Source Files
+
+Reason for this note
+The official BLS source pages and XLSX links were verified on March 31, 2026, but BLS blocked automated spreadsheet download from this environment with an "Access Denied" anti-bot response. The files should still be downloadable normally in a web browser.
+
+Recommended files to download manually
+
+1. BLS Occupational Employment and Wage Statistics tables
+Open:
+https://www.bls.gov/oes/tables.htm
+
+Download:
+- National industry-specific and by ownership
+- All data
+
+Use case:
+- wages by occupation and sector
+- sector comparison
+- histogram and box plot analysis
+
+2. BLS Employment Projections tables
+Open:
+https://www.bls.gov/emp/tables.htm
+
+Download:
+- Occupational projections and worker characteristics
+- Occupational openings and separations
+- Employment and output by industry
+- Industry-occupation matrix tables
+
+Use case:
+- entry-level filtering
+- projected growth
+- openings
+- sector growth
+- occupation-sector mapping
+
+3. BLS State and Area Employment annual average tables
+Open:
+https://www.bls.gov/sae/tables/annual-average/
+
+Download:
+- Employees on nonfarm payrolls in states and selected areas by major industry
+
+Use case:
+- state by sector analysis
+- geographic comparison
+- trend and forecast visuals if multiple years are collected
+
+4. BLS Labor Force Characteristics
+Open:
+https://www.bls.gov/cps/lfcharacteristics.htm
+
+Download:
+- Average hours at work by industry
+- Average hours at work by occupation
+
+Use case:
+- additional quantitative variables
+- hours worked comparisons
+
+5. JOLTS supplemental tables
+Open:
+https://www.bls.gov/web/jolts.supp.toc.htm
+
+Download:
+- seasonally adjusted revision tables
+- not seasonally adjusted revision tables
+
+Use case:
+- labor demand context
+- time trend support
+
+6. O*NET Work Activities
+Open:
+https://www.onetcenter.org/dictionary/29.2/excel/work_activities.html
+
+Direct Excel file:
+https://www.onetcenter.org/dl_files/database/db_29_2_excel/Work%20Activities.xlsx
+
+Use case:
+- clustering
+- occupation similarity
+- work-characteristic profiles
+
+Suggested local folder placement
+Put the downloaded source files in:
+data/raw/
+
+Then we can build:
+- a cleaned analysis file in data/processed/
+- Tableau worksheets and dashboards
+- final report language and presentation storyline

@@ -1,0 +1,176 @@
+ISM 4402 Group Project
+Phase 1 Draft
+
+Project Topic
+U.S. Entry-Level Job Market by Sector: Building a Career Navigator Framework
+
+Project Framing
+This project analyzes the U.S. entry-level job market across sectors to identify where early-career workers are most likely to find opportunities, what occupations are growing fastest, what wages are available, what education is typically required, and how sector characteristics differ across the labor market. The final business framing connects these findings to the idea of a LinkedIn Career Navigator AI that helps users choose sectors, occupations, and learning paths based on labor-market evidence.
+
+Section 1 - Description of Data
+
+Summary of the data chosen
+The project will use a multi-table dataset assembled from real U.S. labor-market sources, primarily the U.S. Bureau of Labor Statistics and O*NET. This is a better fit than using a single small dataset because the course emphasizes connecting to data, transforming data, joining tables, exploratory analysis, clustering, forecasting, dashboards, and storytelling.
+
+The proposed data stack includes:
+
+1. BLS Employment Projections data tables
+- Occupational projections and worker characteristics
+- Industry-occupation matrix data by occupation
+- Industry-occupation matrix data by industry
+- Occupational separations and openings
+- Employment and output by industry
+
+2. BLS Occupational Employment and Wage Statistics tables
+- National industry-specific and by ownership
+- All data
+
+3. BLS State and Area Employment annual average tables
+- Employees on nonfarm payrolls in states and selected areas by major industry
+
+4. BLS CPS labor force characteristics tables
+- Average hours at work by industry
+- Average hours at work by occupation
+
+5. O*NET occupation attributes
+- Work Activities.xlsx
+
+Why this data is appropriate
+This combined dataset is large, complex, real, and highly relevant to the course. It supports:
+- descriptive analytics for data exploration
+- predictive analytics using growth and time-based sector trends
+- calculations and derived fields
+- transforming data through joins, pivots, filtering, and standardization
+- dashboards and stories in Tableau
+- clustering based on job characteristics
+- forecasting using sector employment trends
+
+Source websites and dataset links
+
+U.S. Bureau of Labor Statistics Employment Projections tables:
+https://www.bls.gov/emp/tables.htm
+
+U.S. Bureau of Labor Statistics Occupational Employment and Wage Statistics tables:
+https://www.bls.gov/oes/tables.htm
+
+U.S. Bureau of Labor Statistics State and Area Employment annual average tables:
+https://www.bls.gov/sae/tables/annual-average/
+
+U.S. Bureau of Labor Statistics Labor Force Characteristics:
+https://www.bls.gov/cps/lfcharacteristics.htm
+
+U.S. Bureau of Labor Statistics JOLTS supplemental tables:
+https://www.bls.gov/web/jolts.supp.toc.htm
+
+O*NET Work Activities data dictionary and Excel file:
+https://www.onetcenter.org/dictionary/29.2/excel/work_activities.html
+
+What needs to be done to prepare the data
+
+The data will require substantial preparation before analysis:
+
+1. Standardize occupation codes
+Occupation data from BLS and O*NET use SOC or O*NET-SOC codes. These fields must be cleaned and standardized so the occupation-level tables can be joined correctly.
+
+2. Standardize sector and industry labels
+BLS industry tables use industry codes and sector names. These must be cleaned into a consistent sector dimension so that wages, growth, employment, and openings can be compared across sectors.
+
+3. Filter for entry-level occupations
+The project focus is entry-level labor-market opportunities. Occupations will be filtered using worker-characteristic fields such as typical entry-level education, work experience in a related occupation, and typical on-the-job training. Occupations with lower barriers to entry will be flagged for the core analysis.
+
+4. Create calculated fields
+The analysis will likely require calculated fields such as:
+- entry-level flag
+- wage percentile group
+- projected growth category
+- openings per occupation
+- sector growth ranking
+- occupation skill intensity score
+- sector attractiveness score
+
+5. Handle missing values and suppressed values
+Some tables may contain blanks, suppressed values, or non-comparable categories. These will be documented and handled through filtering, null handling, or exclusion where appropriate.
+
+6. Join multiple tables
+The project will join occupation-level, industry-level, and sector/state-level tables. Likely join keys include occupation code, industry code, and state or geography fields depending on the worksheet.
+
+7. Reshape some fields for Tableau
+O*NET Work Activities data is likely in long format with repeated rows by occupation and activity. Some activity subsets may need to be pivoted or aggregated depending on the visual.
+
+8. Build analysis-ready subsets
+Instead of using every raw column in one wide table, the project should create focused analysis tables for:
+- occupations
+- sectors
+- state-sector employment
+- occupation attributes
+- occupation-sector mapping
+
+Proposed tables and unit of analysis
+
+Table 1: Occupation Projections
+Lowest level of granularity: one row per occupation
+Purpose: growth, wages, openings, education, training, work experience
+
+Table 2: Industry Employment and Output
+Lowest level of granularity: one row per industry
+Purpose: sector size, projected growth, output change
+
+Table 3: Industry-Occupation Matrix
+Lowest level of granularity: one row per occupation within industry, or one row per industry within occupation depending on selected version
+Purpose: which occupations are concentrated in which sectors
+
+Table 4: OEWS Wages by Occupation and Industry
+Lowest level of granularity: one row per occupation-industry combination
+Purpose: wage comparison across sectors and occupations
+
+Table 5: State Employment by Major Industry
+Lowest level of granularity: one row per state-sector combination
+Purpose: geographic distribution of opportunities
+
+Table 6: O*NET Work Activities
+Lowest level of granularity: one row per occupation-activity-scale combination
+Purpose: clustering and skill-profile analysis
+
+Notes on granularity screenshots
+The assignment requests screenshots from Tableau Desktop or Tableau Prep Builder showing how granularity was determined. Those screenshots should be taken after the source files are connected in Tableau.
+
+Section 2 - Purpose of the Analysis
+
+Overall purpose of the analysis
+The purpose of the analysis is to understand where the strongest entry-level opportunities exist in the U.S. job market and how those opportunities vary by sector, occupation, wages, projected growth, education requirements, and work characteristics. The group will use this analysis to support the idea of a LinkedIn Career Navigator AI that helps early-career users choose a sector and occupation path based on real market data.
+
+Angle of the analysis
+The most interesting angle is not just "which jobs pay the most." Instead, the project will evaluate opportunity from multiple perspectives:
+- accessibility for entry-level workers
+- projected growth and openings
+- sector demand
+- wage potential
+- work activity patterns
+- geography
+
+This creates a stronger Tableau story because it allows the group to compare sectors and occupations using both business and career-planning criteria.
+
+Guiding questions for the analysis
+
+1. Which U.S. sectors currently offer the strongest volume of employment for entry-level workers?
+2. Which entry-level occupations have the highest projected growth and annual openings?
+3. How do wages for similar entry-level occupations differ across sectors?
+4. Which sectors combine stronger wage potential with stronger projected employment growth?
+5. How do education and training requirements vary across entry-level occupations and sectors?
+6. Which states show the strongest concentration of employment in sectors that are attractive for early-career workers?
+7. Can occupations be clustered into meaningful groups based on work activities and job characteristics?
+8. Which occupations appear most attractive when balancing accessibility, wages, and growth?
+
+Preliminary recommended scope for Tableau
+To keep the project manageable while still showing complexity, the final Tableau story should focus on:
+- major U.S. sectors
+- entry-level occupations only
+- selected high-interest sectors such as technology-related services, finance, healthcare, professional services, retail, and logistics
+- occupation clusters and sector comparisons
+
+Recommended final narrative
+The final narrative can be:
+"Where should an early-career worker start? A data-driven look at entry-level opportunities across U.S. sectors."
+
+Important implementation note
+The BLS source pages and XLSX links were verified on March 31, 2026 through the official BLS website, but automated file download from this environment was blocked by BLS anti-bot protections. The dataset choice is still valid; the source files may need to be downloaded manually in a browser and then connected in Tableau Desktop.

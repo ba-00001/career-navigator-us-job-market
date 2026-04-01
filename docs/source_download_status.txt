@@ -1,0 +1,53 @@
+Source Download Status
+Updated: 2026-03-31
+
+Summary
+- O*NET Work Activities was successfully downloaded and verified as a real Excel workbook.
+- The BLS files are still blocked by the BLS anti-bot protection when downloaded from this environment.
+- The BLS files currently saved in data/raw/ with the expected names are HTML "Access Denied" responses, not valid spreadsheet files.
+
+Verified Working File
+- data/raw/onet_work_activities.xlsx
+  Official source:
+  https://www.onetcenter.org/dl_files/database/db_29_2_excel/Work%20Activities.xlsx
+
+Blocked BLS Files
+- data/raw/bls_industry_output.xlsx
+  Direct URL:
+  https://www.bls.gov/emp/industry-employment/industry.xlsx
+  Source page:
+  https://www.bls.gov/emp/tables.htm
+
+- data/raw/bls_occupation_projections.xlsx
+  Direct URL:
+  https://www.bls.gov/emp/ind-occ-matrix/occupation.xlsx
+  Source page:
+  https://www.bls.gov/emp/tables.htm
+
+- data/raw/bls_state_annual_unemployment.xlsx
+  Direct URL:
+  https://www.bls.gov/sae/tables/annual-average/table-1-employees-on-nonfarm-payrolls-in-states-and-selected-areas-by-major-industry.xlsx
+  Source page:
+  https://www.bls.gov/sae/tables/annual-average/
+
+- data/raw/oesm24all.zip
+  Direct URL:
+  https://www.bls.gov/oes/special-requests/oesm24all.zip
+  Source page:
+  https://www.bls.gov/oes/tables.htm
+
+How to Fix the BLS Files
+1. Open each official source page in a normal web browser.
+2. Download the file manually.
+3. Save it over the matching file in data/raw/.
+4. Open the saved file locally to confirm it is a real workbook or zip file.
+5. Re-run Tableau using the corrected files.
+
+Why the Error Happens
+- Excel reports that the file format is not valid because the file extension is .xlsx or .zip, but the actual contents are an HTML "Access Denied" page returned by BLS.
+
+Next Recommended Project Steps
+1. Replace the blocked BLS files manually.
+2. Recalculate the row and column counts for the interim report.
+3. Build the Tableau visuals using the corrected source files.
+4. Create the final class presentation deck based on the actual analysis.
